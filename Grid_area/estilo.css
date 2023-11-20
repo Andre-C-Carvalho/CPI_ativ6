@@ -1,0 +1,54 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{}
+
+/*Layout usando comando GRID: primeiro é necessário mapear o layout entendendo quantas linhas e colunas são necessárias 
+para criá-lo, nesse caso são 3 linhas e 3 colunas. Na primeira section que é a tag que encapsula todas as outras declaramos
+o número de linhas e colunas com os comandos: GRID-TEMPLATE-COLUMNS e GRID-TEMPLATE-ROWS. A unidade fr significa fração
+nesse caso cada a tela será dividida em 5 partes a primeira parte tem 1/5 do tamanho, a segunda 3/5 e a última 1/5. A unidade
+ vh significa view height e equivale a porcentagem da altura da tela.
+
+ Usando o GRID-TEMPLATE-AREAS basta indicar o formato desejado explicitamente e posteriormente indicar o elemento 
+ correspondente com o comando GRID-AREA: xxxxx. Os nomes utilizados nesse comando fora utilizados didaticamente, 
+ poderíamos sem problema susbstituir header por "h" nav por "n" main por "m" aside por "a" e footer por "f" desde que no
+comando GRID-AREA eles também fossem substituidos respectivamente.*/
+
+section{
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr; /*indica 3 colunas com as frações: 1/5 3/5 e 1/5*/
+	grid-template-rows: 20vh 73vh 7vh; /*indica 3 linhas com 20, 73 e 7 porcento da tela.*/
+	grid-template-areas: "header header header"
+						 "nav main aside"
+						 "footer footer footer"
+}
+
+
+/*O header deve ocupar a primeira linha completa, ou seja, na rede deve ocupar da posição 1 a posição 4 isso é feito com os co-
+mandos GRID-COLUMN-START e GRID-COLUMN-END ou o comando GRID-COLUMN: X/Y onde x é o início e Y o final*/
+header{
+	background-color: #7C7C7C;
+	grid-area: header;
+}
+
+nav{
+	background-color: #CCC;
+	grid-area: nav;
+}
+
+main{
+	background-color: blue;
+	grid-area: main;
+}
+
+aside{
+	background-color: green;
+	grid-area: aside;
+}
+
+footer{
+	background-color: black;
+	grid-area: footer;
+}

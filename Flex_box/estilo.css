@@ -1,0 +1,100 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{}
+
+section{
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr; /*indica 3 colunas com as frações: 1/5 3/5 e 1/5*/
+	grid-template-rows: 7vh 20vh 66vh 7vh; /*indica 4 linhas com 7, 20, 66 e 7 porcento da tela.*/
+	grid-template-areas: "nt nt nt"
+						 "h h h"
+						 "n m a"
+						 "f f f"
+}
+
+#nav-topo{
+	background-color: #212121;
+	grid-area: nt;
+	color: #FFF;
+}
+
+/*Comando "JUSTIFY-CONTENT:" trata do ALINHAMENTO NA HORIZONTAL, aceita as seguintes opções:
+FLEX-START: itens vão para o início do espaço ocupado pelo container (na horizontal);
+FLEX-END: itens vão para o final do espaço ocupado pelo container (na horizontal);
+CENTER: itens ficam no centro do espaço ocupado pelo container (na horizontal);
+SPACE-BETWEEN: itens ficam o mais espaçado possível ocupando todo o espaço do container (extemos encostam nas margens);
+SPACE-AROUND: itens ocupam todo o espaço do container mas o espaçamento entre os extremos e as margens é igual ao espaçamen-
+			  entre os itens.*/
+
+/*Comando "ALIGN-ITEMS:" trata do ALINHAMENTO NA VERTICAL, aceita as seguintes opções:
+FLEX-START: itens vão para o início do espaço ocupado pelo container (na vertical);
+FLEX-END: itens vão para o final do espaço ocupado pelo container (na vertical);
+CENTER: itens ficam no centro do espaço ocupado pelo container (na vertical);
+*/
+
+ul{
+	display: flex; /*Quando utilizado no container (nesse caso a tag <ul>) dispõe os elementos envolvidos lado a lado.*/
+	height: 100%; /* faz com que a tag <ul> (container) ocupe todos o espaço na tag #nav-topo */
+	justify-content: flex-end ; /*faz com que os itens no container vão para o fim do espaço ocupado por ele.*/
+	align-items: center; /*Faz com que os itens fiquem no centro do espaço do container*/
+}
+
+li{
+	list-style-type: none; /*retira o ícone de enumeração do elemento na lista*/ 
+	margin-right: 30px;
+}
+
+
+/*O header deve ocupar a primeira linha completa, ou seja, na rede deve ocupar da posição 1 a posição 4 isso é feito com os co-
+mandos GRID-COLUMN-START e GRID-COLUMN-END ou o comando GRID-COLUMN: X/Y onde x é o início e Y o final*/
+header{
+	background-color: #7C7C7C;
+	grid-area: h;
+}
+
+nav{
+	background-color: #CCC;
+	grid-area: n;
+}
+
+
+/*Comando "FLEX-WRAP:" permite a quebra de linha quuando necessário para que os elementos caibam na tag que os envolve, 
+aceita as seguintes opções:
+WRAP: Assim que os elementos não caibam no espaço da tag container, eles serão jogados para baixo.
+NOWRAP: não há quebra de linha.
+*/
+
+/*Comando "FLEX DIRECTION:" faz com que os elementos dentro do container fiquem organizados em uma coluna ou linha, aceita as
+seguintes opções:
+ROW, os elementos são organizados em uma linha iniciando do primeiro espaço (linha) do container;
+ROW-REVERSE, os elementos são organizados em uma linha iniciando do último espaço (linha) do container;
+
+*/
+
+main{
+	background-color: blue;
+	grid-area: m;
+	display: flex; /*Quando utilizado no container (nesse caso a tag <main>) dispõe os elementos envolvidos lado a lado.*/
+	flex-wrap: wrap; /*Permite a quebra de linha se for necessário*/
+}
+
+div{
+	width: 200px;
+	height: 200px;
+	border: 1px solid #C4C4C4;
+	background-color: #F5F3F3;
+	margin: 20px;
+}
+
+aside{
+	background-color: green;
+	grid-area: a;
+}
+
+footer{
+	background-color: black;
+	grid-area: f;
+}

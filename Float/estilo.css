@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{}
+
+section{}
+
+/*O comando FLOAT faz com que os elementos que o utilizam saiam do fluxo do html, tem duas opções: float LEFT ou RIGHT. 
+O comando funciona fazendo com que o elemento "flutue" e se alinhe a esquerda ou a direita*/
+
+header{
+	width: 100%;
+	height: 200px;
+	background-color: #7C7C7C;
+}
+
+nav{
+	width: 30%;
+	background-color: #CCC;
+	height: 450px;
+	float: left;
+}
+
+main{
+	width: 50%;
+	background-color: blue;
+	height: 450px;
+	float: left;
+}
+
+aside{
+	width: 20%;
+	background-color: green;
+	height: 450px;
+	float: left;
+}
+
+/*O comando FLOAT faz com que os elementos que o utilizam saiam do fluxo do html, mas provoca que os elementos posteriores a 
+ele, como nesse caso o footer, fiquem em uma camada abaixo dos elementos que "flutuam". Para resolver esse problema usamos o 
+comando CLEAR. Ele faz com que os elementos posteriores voltem ao fluxo normal do html, mas apenas depois dos que 
+flutuam. Tem as opções clear: LEFT, RIGHT ou BOTH. Ignora a flutuação para a esquerda, para a direita ou ambas.*/
+
+footer{
+	width: 100%;
+	background-color: black;
+	height: 94px;
+	clear: both;
+}
